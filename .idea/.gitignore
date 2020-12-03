@@ -2,7 +2,11 @@
 /shelf/
 /workspace.xml
 # Datasource local storage ignored files
+<<<<<<< 4b2513edeb6aeaad07ad472b4a53744be1b8bc0e
 /../../../../../../../../:\Users\barka\Documents\Info from internet\afterstartLuminor\simple-rest-with-gradle\.idea/dataSources/
+=======
+/../../../../../../../../:\Users\barka\Documents\Info from internet\afterstartLuminor\java-streams\.idea/dataSources/
+>>>>>>> Create project for learn stream
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
