@@ -16,8 +16,8 @@ import java.util.UUID;
 @AllArgsConstructor
 public class PersonService {
 
-    @Qualifier("fakeDao")
-//    @Qualifier("postgres")
+//    @Qualifier("fakeDao")
+    @Qualifier("postgres")
     private final PersonDao personDao;
 
     public int addPerson(Person person){
