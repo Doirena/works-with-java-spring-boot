@@ -16,8 +16,10 @@ public class PersonDataAccessService implements PersonDao {
 
     private final JdbcTemplate jdbcTemplate;
     @Override
-    public int insertPerson(UUID id, Person person) {
-        return 0;
+    public int insertPerson(UUID personId, Person person) {
+        final String sql = "INSERT INTO person (id, name) VALUES (?, ?)";
+        return jdbcTemplate.update(
+                sql, personId, person.getName());
     }
 
     @Override
@@ -43,11 +45,16 @@ public class PersonDataAccessService implements PersonDao {
     }
 
     @Override
-    public void deletePersonById(UUID id) throws ResourceNotFoundException {
+    public void deletePersonById(UUID personId) throws ResourceNotFoundException {
+        final String sql = "DELETE FROM person WHERE id = ?";
+        jdbcTemplate.update(sql, personId);
+
     }
 
     @Override
     public Person updatePersonById(UUID id, Person person) {
-        return null;
+        final String sql = "UPDATE person SET name = ? WHERE id = ?";
+        jdbcTemplate.update(sql, person.getName(), id);
+        return new Person(id, person.getName());
     }
 }
