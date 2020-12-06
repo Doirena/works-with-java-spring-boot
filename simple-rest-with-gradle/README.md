@@ -1,7 +1,7 @@
-##Rest API
+<b>Rest API</b>  
 This project is simple rest API.  
 Whole project is made by spring boot gradale, Java 11 all data is save in postgres sql.
-##Run application
+<b>Run application</b>  
 To run this application you have to do these steps with docker which creates image for psql:  
 `- docker run --name postgres-spring -e POSTGRES_PASSWORD=password -d -p 5432:5432 postgres:alpine`   
 `- docker port postgres-spring`  
