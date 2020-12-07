@@ -21,17 +21,17 @@ public class Main {
 
         //Using ifPresent
         Optional.ofNullable("jonh@gmail.com")
-                .ifPresent(email -> System.out.println("Sending email to: "+ email));
+                .ifPresent(email -> System.out.println("Sending email to: " + email));
 
-         Optional.ofNullable("jonh@gmail.com")
-                .ifPresentOrElse(email -> System.out.println("Sending email to: "+ email),
-                        ()->{
+        Optional.ofNullable("jonh@gmail.com")
+                .ifPresentOrElse(email -> System.out.println("Sending email to: " + email),
+                        () -> {
                             System.out.println("Can't send email");
                         });
 
         Optional.ofNullable(null)
-                .ifPresentOrElse(email -> System.out.println("Sending email to: "+ email),
-                        ()->{
+                .ifPresentOrElse(email -> System.out.println("Sending email to: " + email),
+                        () -> {
                             System.out.println("Can't send email");
                         });
     }
