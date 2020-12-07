@@ -14,6 +14,14 @@ public class _Function {
 
         int increment2 = incrementByOneFuntion.apply(1);
         System.out.println("By onefuntion " + increment2);
+
+        int multiply = multiplyBy10Funtion.apply(increment2);
+        System.out.println(multiply);
+
+        // Combine two functions it is the same like above the line there we get the multiply
+        Function<Integer, Integer> addBy1AndThenMultiblyBy10
+                = incrementByOneFuntion.andThen(multiplyBy10Funtion);
+        System.out.println(addBy1AndThenMultiblyBy10.apply(4));
     }
 
     /**
@@ -23,6 +31,13 @@ public class _Function {
     static Function<Integer, Integer> incrementByOneFuntion =
             number -> number + 1;
 
+    static Function<Integer, Integer> multiplyBy10Funtion = number -> number * 10;
+
+    /**
+     * simple funtion which take one int variable and return int
+     * @param number
+     * @return number
+     */
     static int incrementByOne(int number) {
         return number + 1;
     }
