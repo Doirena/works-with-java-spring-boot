@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
 import static com.dovile.javafuncional.imperative.Main.Gender.FEMALE;
 import static com.dovile.javafuncional.imperative.Main.Gender.MALE;
 
+/**
+ *
+ * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
+ */
 public class Main {
     public static void main(String[] args) {
         List<Person> people = List.of(
@@ -21,7 +25,7 @@ public class Main {
         );
 
         //Imperative approach
-
+        System.out.println("Imperative approach");
         List<Person> females = new ArrayList<>();
         for (Person person : people){
             if(FEMALE.equals(person.gender)){
@@ -33,6 +37,7 @@ public class Main {
         }
 
         //Declarative approach
+        System.out.println("Declarative approach");
         List<Person> females1 = people.stream()
                 .filter(person -> person.gender.equals(FEMALE))
                 .collect(Collectors.toList());
