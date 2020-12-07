@@ -5,7 +5,7 @@ import java.util.function.Consumer;
 /**
  * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
  */
-public class Main {
+public class Callbacks {
 
     public static void main(String[] args) {
 
