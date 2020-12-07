@@ -59,8 +59,4 @@ public class _Predicate {
 
     static BiPredicate<String, String> isPhoneNumberValidBiPredicate_OR = (phoneNumber_1, phoneNumber_2) ->
             phoneNumber_1.startsWith("07") && phoneNumber_1.length() == 11 || phoneNumber_2.contains("3");
-
-
-
-
 }
