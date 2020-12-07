@@ -6,11 +6,11 @@ import lombok.ToString;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.IntConsumer;
+import java.util.function.Predicate;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 
-import static com.dovile.javafuncional.streams._Stream.Gender.FEMALE;
-import static com.dovile.javafuncional.streams._Stream.Gender.MALE;
+import static com.dovile.javafuncional.streams._Stream.Gender.*;
 
 
 /**
@@ -50,6 +50,26 @@ public class _Stream {
                 .map(person -> person.name)
                 .mapToInt(String::length)
                 .forEach(System.out::println);
+
+        //AllMatch
+        System.out.println("All match");
+        Predicate<Person> personPredicate = person -> FEMALE.equals(person.gender);
+        boolean containsOnlyFemales = people.stream()
+                .allMatch(personPredicate);
+        System.out.println(containsOnlyFemales);
+
+        //AnyMatch
+        System.out.println("Any match");
+        boolean containsOnlyFemalesAny = people.stream()
+                .anyMatch(personPredicate);
+        System.out.println(containsOnlyFemalesAny);
+
+        //NoneMatch
+        Predicate<Person> personPredicate1 = person -> UNISEX.equals(person.gender);
+        System.out.println("None match");
+        boolean containsOnlyFemalesNone = people.stream()
+                .noneMatch(personPredicate1);
+        System.out.println(containsOnlyFemalesNone);
     }
 
     @AllArgsConstructor
@@ -61,6 +81,7 @@ public class _Stream {
 
     enum Gender {
         MALE,
-        FEMALE
+        FEMALE,
+        UNISEX
     }
 }
