@@ -1,6 +1,8 @@
 package com.dovile.crudusingr2dbcwebflux.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
 /**
